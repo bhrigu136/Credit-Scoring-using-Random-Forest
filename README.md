@@ -31,7 +31,7 @@ The goal of this project is to demonstrate a **complete machine learning workflo
 ## 💻 Technologies Used  
 
 - **Python** – Core programming language  
-- **Scikit-learn** – RandomForestClassifier, OneHotEncoder, ColumnTransformer, and Pipelines  
+- **Scikit-learn** – For building the machine learning model (RandomForestClassifier), preprocessing (OneHotEncoder, ColumnTransformer), and managing the workflow (Pipeline).  
 - **Streamlit** – For the interactive web application  
 - **Pandas** – Data manipulation and analysis  
 - **Joblib** – Saving and loading the trained model  
