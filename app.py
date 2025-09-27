@@ -96,15 +96,16 @@ with st.expander("🔽 Fill Applicant Information", expanded=True):
 input_df = pd.DataFrame([input_data])
 
 # --- Prediction ---
+
 if st.button("🚀 Predict Credit Score"):
     try:
         prediction = pipeline.predict(input_df)
         probability = pipeline.predict_proba(input_df)
 
         applicant_summary = {
-            "Age": input_data.get("Age in years", "N/A"),
-            "Credit Amount": input_data.get("Credit amount", "N/A"),
-            "Duration": input_data.get("Duration in months", "N/A"),
+            "Age": f"{input_data.get('Attribute13', 'N/A')} yrs",
+            "Credit Amount": f"${int(input_data.get('Attribute5', 0)):,}",
+            "Duration": f"{input_data.get('Attribute2', 'N/A')} months",
         }
 
         st.markdown("### 📊 Applicant Summary")
