@@ -103,9 +103,9 @@ if st.button("🚀 Predict Credit Score"):
         probability = pipeline.predict_proba(input_df)
 
         applicant_summary = {
-            "Age": f"{input_data.get('Attribute13', 'N/A')} yrs",
+            "Age": f"{round(input_data.get('Attribute13', 0))} yrs",
             "Credit Amount": f"${int(input_data.get('Attribute5', 0)):,}",
-            "Duration": f"{input_data.get('Attribute2', 'N/A')} months",
+            "Duration": f"{round(input_data.get('Attribute2', 0), 1)} months",
         }
 
         st.markdown("### 📊 Applicant Summary")
@@ -124,4 +124,5 @@ if st.button("🚀 Predict Credit Score"):
 
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
+
 
